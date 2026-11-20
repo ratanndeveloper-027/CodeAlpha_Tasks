@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Awareness Training | CodeAlpha</title>
+    <!-- Google Font for clean modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="badge">Cybersecurity Awareness Project</div>
+        <h1>Phishing Awareness Training</h1>
+        <p>Think Before You Click! Learn to identify and defend against cyber attacks.</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- 1. What is Phishing -->
+        <section class="card">
+            <h2>🛡️ What is Phishing?</h2>
+            <p class="section-desc">
+                Phishing is a cyber attack where criminals impersonate trusted organizations (like banks, Google, or
+                Netflix) using fake emails, messages, or websites to steal your passwords, banking details, or OTPs.
+            </p>
+
+            <div class="types-grid">
+                <div class="type-box">
+                    <h3>📧 Email Phishing</h3>
+                    <p>Mass deceptive emails sent to thousands to steal login passwords or bank cards.</p>
+                </div>
+                <div class="type-box">
+                    <h3>🎯 Spear Phishing</h3>
+                    <p>Personalized attacks tailored specifically against an individual or company employee.</p>
+                </div>
+                <div class="type-box">
+                    <h3>📱 Smishing & Vishing</h3>
+                    <p>Phishing attempts delivered through SMS messages (Smishing) or voice calls (Vishing).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. How to Identify Phishing -->
+        <section class="card">
+            <h2>🔍 How to Identify Phishing Attacks</h2>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <span class="tip-num">1</span>
+                    <div>
+                        <h4>Check Sender Address</h4>
+                        <p>Look at the actual email address behind the display name (e.g. alerts@bob-kyc-alert.com).</p>
+                    </div>
+                </div>
+                <div class="tip-item">
+                    <span class="tip-num">2</span>
+                    <div>
+                        <h4>Artificial Urgency</h4>
+                        <p>Be suspicious when an email demands urgent action within 10 minutes or 24 hours.</p>
+                    </div>
+                </div>
+                <div class="tip-item">
+                    <span class="tip-num">3</span>
+                    <div>
+                        <h4>Hover Before Clicking</h4>
+                        <p>Hover your mouse cursor over any link to preview where it really redirects.</p>
+                    </div>
+                </div>
+                <div class="tip-item">
+                    <span class="tip-num">4</span>
+                    <div>
+                        <h4>Never Disclose OTPs</h4>
+                        <p>Legitimate organizations and banks will never ask for your password or OTP.</p>
+                    </div>
+                </div>
+                <div class="tip-item">
+                    <span class="tip-num">5</span>
+                    <div>
+                        <h4>Look for Typos</h4>
+                        <p>Watch for misspelled bank domains such as bankofbar0da.com or bob-kyc-update.net.</p>
+                    </div>
+                </div>
+                <div class="tip-item">
+                    <span class="tip-num">6</span>
+                    <div>
+                        <h4>Unexpected Attachments</h4>
+                        <p>Never download or open unexpected file attachments ending in .exe, .scr, or .zip.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Real Phishing Example with Interactive Clues -->
+        <section class="card">
+            <h2>⚠️ Real-Life Phishing Example</h2>
+            <p class="section-desc">Look at this simulated email. Click the button to inspect the red flags!</p>
+
+            <button class="btn btn-warning" onclick="toggleRedFlags()">
+                🔍 Toggle Red Flags
+            </button>
+
+            <!-- Simulated Email Container -->
+            <div id="emailBox" class="email-mockup">
+                <div class="email-header">
+                    <p><b>From:</b> <span class="flag-target">Bank of Baroda Alerts &lt;alerts@bob-kyc-verification.net&gt;</span></p>
+                    <p><b>To:</b> customer@example.com</p>
+                    <p><b>Subject:</b> <span class="flag-target urgent-text">URGENT: Your BOB NetBanking & Debit Card will be blocked in 24 hours!</span></p>
+                </div>
+                <div class="email-body">
+                    <p class="flag-target"><b>Dear Bank of Baroda Customer,</b></p>
+                    <p>Your Bank of Baroda (BOB) NetBanking KYC is expired. As per RBI guidelines, all banking transactions and ATM debit card services will be blocked within <strong>24 hours</strong>.</p>
+                    <p>Please update your PAN Card and Aadhaar details immediately to restore your account services.</p>
+
+                    <div class="email-btn-box">
+                        <button class="fake-link-btn"
+                            onclick="alert('⚠️ Warning: In a real attack, this button steals your Bank of Baroda NetBanking password and OTP!')">
+                            Update BOB KYC Details Now
+                        </button>
+                        <p class="flag-target fake-link-text">Destination: http://192.168.1.5/fake-bob-netbanking-login.php</p>
+                    </div>
+
+                    <p class="email-warning-note">Simulated training scenario. Never enter real banking credentials.</p>
+                </div>
+            </div>
+
+            <!-- Clue Breakdown Box -->
+            <div id="clueBox" class="clue-box" style="display: none;">
+                <h3>🚩 Red Flags Found in this Email:</h3>
+                <ul>
+                    <li><b>Fake Bank Domain:</b> Notice <code>bob-kyc-verification.net</code> is a fake external domain. Official Bank of Baroda emails end in <code>bankofbaroda.in</code>.</li>
+                    <li><b>Urgency & Fear:</b> Threatening "NetBanking & Debit Card Blocked in 24 hours" creates panic so you act quickly without thinking.</li>
+                    <li><b>Generic Greeting:</b> Uses "Dear Bank of Baroda Customer" instead of your real name or masked account number.</li>
+                    <li><b>Insecure Link:</b> The button directs to an unencrypted IP address (<code>http://192.168...</code>) rather than the official HTTPS Bank of Baroda portal.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 4. Social Engineering Techniques -->
+        <section class="card">
+            <h2>🧠 Social Engineering Techniques</h2>
+            <div class="techniques-grid">
+                <div class="technique-card">
+                    <h3>😱 Fear</h3>
+                    <p>Threatening account closure, police fines, or legal action to make you act without thinking.</p>
+                </div>
+                <div class="technique-card">
+                    <h3>⏰ Urgency</h3>
+                    <p>Creating fake countdowns or limited time windows to prevent you from checking facts.</p>
+                </div>
+                <div class="technique-card">
+                    <h3>🎭 Impersonation</h3>
+                    <p>Pretending to be a company CEO, IT manager, bank officer, or government agency.</p>
+                </div>
+                <div class="technique-card">
+                    <h3>🎁 Reward</h3>
+                    <p>Offering fake cash prizes, free iPhones, or lottery winnings to lure you into sharing info.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Phishing Awareness Quiz -->
+        <section class="card quiz-card">
+            <h2>📝 Phishing Awareness Quiz</h2>
+            <p class="section-desc">Test your cyber instincts and check your awareness score.</p>
+
+            <div class="quiz-status">
+                <span id="quizCounter">Question 1 of 5</span>
+                <span id="scoreText">Score: 0</span>
+            </div>
+
+            <!-- Question Text -->
+            <h3 id="question" class="quiz-question">Loading question...</h3>
+
+            <!-- Options Container -->
+            <div id="answers" class="answers-container"></div>
+
+            <!-- Feedback Message -->
+            <p id="feedback" class="quiz-feedback"></p>
+
+            <!-- Quiz Buttons -->
+            <div class="quiz-actions">
+                <button id="nextBtn" class="btn btn-primary" onclick="nextQuestion()" style="display: none;">
+                    Next Question →
+                </button>
+                <button id="restartBtn" class="btn btn-secondary" onclick="restartQuiz()" style="display: none;">
+                    🔄 Retake Quiz
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Cybersecurity Awareness Project </p>
+        <p class="footer-note">Think Before You Click. Stay Safe Online!</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

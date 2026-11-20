@@ -1,0 +1,464 @@
+/* =======================================================
+   Phishing Awareness Training - Clean Light Stylesheet
+   CodeAlpha Cybersecurity Internship
+   ======================================================= */
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f1f5f9; /* Clean soft light gray */
+    color: #1e293b;            /* Dark readable text */
+    line-height: 1.6;
+}
+
+/* Header Section */
+header {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb); /* Professional Royal Blue */
+    color: #ffffff;
+    text-align: center;
+    padding: 45px 20px 35px;
+    box-shadow: 0 4px 15px rgba(30, 58, 138, 0.15);
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+header p {
+    color: #e0e7ff;
+    font-size: 1.05rem;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+/* Cards */
+.card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Soft natural shadow */
+}
+
+.card h2 {
+    color: #1e3a8a;
+    font-size: 1.45rem;
+    margin-bottom: 12px;
+}
+
+.section-desc {
+    color: #475569;
+    margin-bottom: 18px;
+    font-size: 0.98rem;
+}
+
+/* 1. Types Grid */
+.types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.type-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 18px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.type-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.type-box h3 {
+    font-size: 1.05rem;
+    color: #0f172a;
+    margin-bottom: 6px;
+}
+
+.type-box p {
+    font-size: 0.88rem;
+    color: #64748b;
+}
+
+/* 2. Identification Tips Grid */
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 15px;
+}
+
+.tip-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.tip-num {
+    background: #2563eb;
+    color: #ffffff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.tip-item h4 {
+    color: #0f172a;
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+}
+
+.tip-item p {
+    color: #475569;
+    font-size: 0.85rem;
+}
+
+.tip-item code {
+    background: #e2e8f0;
+    color: #1e40af;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+/* 3. Phishing Email Simulator (Realistic Webmail Look) */
+.email-mockup {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    margin-top: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.email-header {
+    background: #f1f5f9;
+    padding: 14px 18px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.9rem;
+    color: #334155;
+}
+
+.email-header p {
+    margin-bottom: 4px;
+}
+
+.urgent-text {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.email-body {
+    padding: 20px;
+    font-size: 0.92rem;
+    color: #1e293b;
+}
+
+.email-body p {
+    margin-bottom: 12px;
+}
+
+.email-btn-box {
+    text-align: center;
+    margin: 22px 0;
+}
+
+.fake-link-btn {
+    background: #ea580c; /* BOB signature Bank Orange */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(234, 88, 12, 0.3);
+}
+
+.fake-link-btn:hover {
+    background: #c2410c;
+}
+
+.fake-link-text {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-top: 6px;
+}
+
+.email-warning-note {
+    font-size: 0.8rem;
+    color: #d97706;
+    font-style: italic;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 10px;
+}
+
+/* Red Flags Highlight on Email */
+.highlight-flags .flag-target {
+    background: #fee2e2;
+    border: 1px dashed #dc2626;
+    color: #b91c1c !important;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.clue-box {
+    background: #fef2f2;
+    border: 1px solid #f87171;
+    border-radius: 8px;
+    padding: 18px;
+    margin-top: 16px;
+}
+
+.clue-box h3 {
+    color: #dc2626;
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+}
+
+.clue-box ul {
+    padding-left: 20px;
+}
+
+.clue-box li {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #334155;
+}
+
+.clue-box code {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+/* 4. Social Engineering Grid */
+.techniques-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.technique-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 18px;
+    transition: transform 0.2s;
+}
+
+.technique-card:hover {
+    transform: translateY(-2px);
+}
+
+.technique-card h3 {
+    font-size: 1.05rem;
+    color: #1e40af;
+    margin-bottom: 6px;
+}
+
+.technique-card p {
+    font-size: 0.85rem;
+    color: #475569;
+}
+
+/* 5. Phishing Quiz */
+.quiz-status {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #64748b;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.quiz-question {
+    color: #0f172a;
+    font-size: 1.15rem;
+    margin-bottom: 18px;
+}
+
+.answers-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* Quiz Option Button */
+.quiz-btn {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    color: #1e293b;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+
+.quiz-btn:hover:not(:disabled) {
+    background: #eff6ff;
+    border-color: #2563eb;
+    color: #1d4ed8;
+}
+
+.quiz-btn.correct {
+    background: #dcfce7 !important;
+    border-color: #16a34a !important;
+    color: #15803d !important;
+    font-weight: 600;
+}
+
+.quiz-btn.wrong {
+    background: #fee2e2 !important;
+    border-color: #dc2626 !important;
+    color: #b91c1c !important;
+    font-weight: 600;
+}
+
+.quiz-btn:disabled {
+    cursor: default;
+}
+
+/* Quiz Feedback */
+.quiz-feedback {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    border-radius: 6px;
+    display: none;
+}
+
+.quiz-feedback.correct-msg {
+    display: block;
+    background: #dcfce7;
+    border-left: 4px solid #16a34a;
+    color: #166534;
+}
+
+.quiz-feedback.wrong-msg {
+    display: block;
+    background: #fee2e2;
+    border-left: 4px solid #dc2626;
+    color: #991b1b;
+}
+
+/* Standard Buttons */
+.btn {
+    border: none;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn-primary {
+    background: #2563eb;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+}
+
+.btn-warning {
+    background: #d97706;
+    color: #ffffff;
+}
+
+.btn-warning:hover {
+    background: #b45309;
+}
+
+.btn-secondary {
+    background: #475569;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #334155;
+}
+
+.quiz-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    background: #1e293b;
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    margin-top: 40px;
+}
+
+.footer-note {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-top: 5px;
+}
+
+/* Mobile Screen Adaptation */
+@media (max-width: 650px) {
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}
