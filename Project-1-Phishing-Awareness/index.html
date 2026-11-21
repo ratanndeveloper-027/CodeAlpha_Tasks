@@ -107,13 +107,16 @@
             <!-- Simulated Email Container -->
             <div id="emailBox" class="email-mockup">
                 <div class="email-header">
-                    <p><b>From:</b> <span class="flag-target">Bank of Baroda Alerts &lt;alerts@bob-kyc-verification.net&gt;</span></p>
+                    <p><b>From:</b> <span class="flag-target">Bank of Baroda Alerts
+                            &lt;alerts@bob-kyc-verification.net&gt;</span></p>
                     <p><b>To:</b> customer@example.com</p>
-                    <p><b>Subject:</b> <span class="flag-target urgent-text">URGENT: Your BOB NetBanking & Debit Card will be blocked in 24 hours!</span></p>
+                    <p><b>Subject:</b> <span class="flag-target urgent-text">URGENT: Your BOB NetBanking & Debit Card
+                            will be blocked in 24 hours!</span></p>
                 </div>
                 <div class="email-body">
                     <p class="flag-target"><b>Dear Bank of Baroda Customer,</b></p>
-                    <p>Your Bank of Baroda (BOB) NetBanking KYC is expired. As per RBI guidelines, all banking transactions and ATM debit card services will be blocked within <strong>24 hours</strong>.</p>
+                    <p>Your Bank of Baroda (BOB) NetBanking KYC is expired. As per RBI guidelines, all banking
+                        transactions and ATM debit card services will be blocked within <strong>24 hours</strong>.</p>
                     <p>Please update your PAN Card and Aadhaar details immediately to restore your account services.</p>
 
                     <div class="email-btn-box">
@@ -121,7 +124,8 @@
                             onclick="alert('⚠️ Warning: In a real attack, this button steals your Bank of Baroda NetBanking password and OTP!')">
                             Update BOB KYC Details Now
                         </button>
-                        <p class="flag-target fake-link-text">Destination: http://192.168.1.5/fake-bob-netbanking-login.php</p>
+                        <p class="flag-target fake-link-text">Destination:
+                            http://192.168.1.5/fake-bob-netbanking-login.php</p>
                     </div>
 
                     <p class="email-warning-note">Simulated training scenario. Never enter real banking credentials.</p>
@@ -132,10 +136,14 @@
             <div id="clueBox" class="clue-box" style="display: none;">
                 <h3>🚩 Red Flags Found in this Email:</h3>
                 <ul>
-                    <li><b>Fake Bank Domain:</b> Notice <code>bob-kyc-verification.net</code> is a fake external domain. Official Bank of Baroda emails end in <code>bankofbaroda.in</code>.</li>
-                    <li><b>Urgency & Fear:</b> Threatening "NetBanking & Debit Card Blocked in 24 hours" creates panic so you act quickly without thinking.</li>
-                    <li><b>Generic Greeting:</b> Uses "Dear Bank of Baroda Customer" instead of your real name or masked account number.</li>
-                    <li><b>Insecure Link:</b> The button directs to an unencrypted IP address (<code>http://192.168...</code>) rather than the official HTTPS Bank of Baroda portal.</li>
+                    <li><b>Fake Bank Domain:</b> Notice <code>bob-kyc-verification.net</code> is a fake external domain.
+                        Official Bank of Baroda emails end in <code>bankofbaroda.in</code>.</li>
+                    <li><b>Urgency & Fear:</b> Threatening "NetBanking & Debit Card Blocked in 24 hours" creates panic
+                        so you act quickly without thinking.</li>
+                    <li><b>Generic Greeting:</b> Uses "Dear Bank of Baroda Customer" instead of your real name or masked
+                        account number.</li>
+                    <li><b>Insecure Link:</b> The button directs to an unencrypted IP address
+                        (<code>http://192.168...</code>) rather than the official HTTPS Bank of Baroda portal.</li>
                 </ul>
             </div>
         </section>
