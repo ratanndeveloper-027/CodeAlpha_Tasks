@@ -70,3 +70,8 @@ Use this tool only on networks and devices you own or have explicit permission t
 
 ## Author
 Developed as part of the CodeAlpha Cyber Security Internship.
+
+## Learning Outcomes
+- Understanding how packet capture works with Scapy and Npcap.
+- Inspecting packet metadata such as IP addresses, protocols, ports, and packet size.
+- Presenting live network traffic through a Flask-based web dashboard.
