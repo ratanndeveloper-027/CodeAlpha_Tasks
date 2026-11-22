@@ -14,9 +14,28 @@
 
 ## Overview
 
-**SentinelNIDS** is a web-based Network Intrusion Detection System built with Python. It monitors network packets, applies configurable-style detection logic to identify suspicious traffic patterns, and presents security events through a dashboard.
+**SentinelNIDS** is a web-based Network Intrusion Detection System built with Python. It monitors network packets, applies rule-based detection logic to identify suspicious traffic patterns, and presents security events through a dashboard.
 
 The project is designed as a practical cybersecurity learning and portfolio project, bringing together packet capture, traffic inspection, rule-based detection, alert management, and web application development.
+
+## Dashboard Preview
+
+The following screenshots show the SentinelNIDS dashboard, live network traffic view, and packet monitoring interface.
+
+<p align="center">
+  <img src="screenshots/security-dashboard.png" alt="SentinelNIDS security dashboard" width="100%">
+  <br><em>Security Dashboard</em>
+</p>
+
+<p align="center">
+  <img src="screenshots/live-network-traffic.png" alt="SentinelNIDS live network traffic" width="100%">
+  <br><em>Live Network Traffic</em>
+</p>
+
+<p align="center">
+  <img src="screenshots/packet-monitoring.png" alt="SentinelNIDS packet monitoring view" width="100%">
+  <br><em>Packet Monitoring View</em>
+</p>
 
 ## Key Features
 
@@ -77,6 +96,11 @@ Project-3-Network-Intrusion-Detection/
 │
 ├── database/
 │   └── alerts.db          # Created when the application runs
+│
+├── screenshots/
+│   ├── security-dashboard.png
+│   ├── live-network-traffic.png
+│   └── packet-monitoring.png
 │
 ├── templates/
 │   └── index.html
