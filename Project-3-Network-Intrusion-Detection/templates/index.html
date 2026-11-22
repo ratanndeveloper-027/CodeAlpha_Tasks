@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SentinelNIDS | Security Operations Center</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="app-container">
+
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon">S</div>
+                <div>
+                    <h2>SentinelNIDS</h2>
+                    <span>NETWORK SECURITY</span>
+                </div>
+            </div>
+
+            <nav>
+                <a class="nav-item active" href="#dashboard">▦ Dashboard</a>
+                <a class="nav-item" href="#traffic">◈ Network Traffic</a>
+                <a class="nav-item" href="#alerts">⚠ Security Alerts</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <span class="online-dot"></span>
+                Monitoring Platform
+                <p>Version 1.0.0</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar" id="dashboard">
+                <div>
+                    <h1>Security Dashboard</h1>
+                    <p>Real-time Network Intrusion Detection System</p>
+                </div>
+                <div class="system-status">
+                    <span class="online-dot" id="statusDot"></span>
+                    <span id="statusText">SYSTEM IDLE</span>
+                </div>
+            </header>
+
+            <section class="control-panel">
+                <div>
+                    <h3>Network Monitoring</h3>
+                    <p>Monitor authorized network traffic in real time.</p>
+                </div>
+                <div class="controls">
+                    <button id="startBtn" class="start-btn">▶ Start Monitoring</button>
+
+                    <button id="stopBtn" class="stop-btn" disabled>■ Stop Monitoring</button>
+
+                    <button id="testBtn" class="start-btn">
+                        🧪 Simulate Threats
+                    </button>
+                </div>
+            </section>
+
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <span>Total Packets</span>
+                    <h2 id="packetCount">0</h2>
+                    <small>Captured network packets</small>
+                </div>
+
+                <div class="stat-card">
+                    <span>Total Alerts</span>
+                    <h2 id="alertCount">0</h2>
+                    <small>Detected security events</small>
+                </div>
+
+                <div class="stat-card">
+                    <span>High / Critical</span>
+                    <h2 id="criticalCount">0</h2>
+                    <small>Priority security alerts</small>
+                </div>
+
+                <div class="stat-card">
+                    <span>System Status</span>
+                    <h2 id="systemState">IDLE</h2>
+                    <small>Packet monitoring state</small>
+                </div>
+            </section>
+
+            <section class="panel" id="traffic">
+                <div class="panel-heading">
+                    <div>
+                        <h3>Live Network Traffic</h3>
+                        <p>Latest captured IP packets</p>
+                    </div>
+                    <span class="live-label">● LIVE</span>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>TIME</th>
+                                <th>SOURCE IP</th>
+                                <th>DESTINATION IP</th>
+                                <th>PROTOCOL</th>
+                                <th>SIZE</th>
+                            </tr>
+                        </thead>
+                        <tbody id="packetTable">
+                            <tr>
+                                <td colspan="5" class="empty-state">
+                                    No packets captured yet. Start monitoring.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="panel" id="alerts">
+                <div class="panel-heading">
+                    <div>
+                        <h3>Security Alerts</h3>
+                        <p>Suspicious network activity detected by rules</p>
+                    </div>
+                    <span class="alert-label">THREAT MONITOR</span>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>TIME</th>
+                                <th>ALERT TYPE</th>
+                                <th>SOURCE IP</th>
+                                <th>SEVERITY</th>
+                                <th>DESCRIPTION</th>
+                            </tr>
+                        </thead>
+                        <tbody id="alertTable">
+                            <tr>
+                                <td colspan="5" class="empty-state">
+                                    No security alerts detected.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <footer>
+                SentinelNIDS © 2026 | Network Security Monitoring Platform
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
