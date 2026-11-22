@@ -180,5 +180,181 @@ function toggleRedFlags() {
     }
 }
 
+// -------------------------------------------------------------------------
+// Automated Guided Demo (For Video Presentations & Screen Recording)
+// -------------------------------------------------------------------------
+let isDemoRunning = false;
+
+async function startAutoDemo() {
+    if (isDemoRunning) return;
+    isDemoRunning = true;
+
+    const demoBtn = document.getElementById("autoDemoBtn");
+    if (demoBtn) {
+        demoBtn.textContent = "⏹️ Stop Demo Walkthrough";
+        demoBtn.style.background = "#ef4444";
+        demoBtn.onclick = stopAutoDemo;
+    }
+
+    const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+    try {
+        // 1. Scroll to Top Header
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        await wait(2500);
+        if (!isDemoRunning) return;
+
+        // 2. Scroll to 'What is Phishing'
+        const sec1 = document.querySelector(".card:nth-of-type(1)");
+        if (sec1) sec1.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        await wait(3000);
+        if (!isDemoRunning) return;
+
+        // 3. Scroll to 'How to Identify Phishing'
+        const sec2 = document.querySelector(".card:nth-of-type(2)");
+        if (sec2) sec2.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        await wait(3000);
+        if (!isDemoRunning) return;
+
+        // 4. Scroll to Simulated BOB Phishing Email
+        const sec3 = document.querySelector(".card:nth-of-type(3)");
+        if (sec3) sec3.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        await wait(2000);
+        if (!isDemoRunning) return;
+
+        // Toggle Red Flags in BOB Email to reveal clues!
+        const clueBox = document.getElementById("clueBox");
+        if (clueBox && (clueBox.style.display === "none" || clueBox.style.display === "")) {
+            toggleRedFlags();
+        }
+        await wait(4500);
+        if (!isDemoRunning) return;
+
+        // 5. Scroll to 'Social Engineering Techniques'
+        const sec4 = document.querySelector(".card:nth-of-type(4)");
+        if (sec4) sec4.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        await wait(3000);
+        if (!isDemoRunning) return;
+
+        // 6. Scroll to Interactive Quiz
+        const quizCard = document.querySelector(".quiz-card");
+        if (quizCard) quizCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        restartQuiz();
+        await wait(2000);
+        if (!isDemoRunning) return;
+
+        // Automatically solve questions to show off the system!
+        for (let i = 0; i < questions.length; i++) {
+            if (!isDemoRunning) return;
+            checkAnswer(questions[i].correct);
+            await wait(2200);
+            if (!isDemoRunning) return;
+            nextQuestion();
+            await wait(1400);
+        }
+
+        // Celebrate completion
+        await wait(3000);
+    } finally {
+        stopAutoDemo();
+    }
+}
+
+function stopAutoDemo() {
+    isDemoRunning = false;
+    const demoBtn = document.getElementById("autoDemoBtn");
+    if (demoBtn) {
+        demoBtn.textContent = "▶️ Play Demo Walkthrough";
+        demoBtn.style.background = "#10b981";
+        demoBtn.onclick = startAutoDemo;
+    }
+}
+
+// -------------------------------------------------------------------------
+// 1-Click Video Recording & Automatic Download (.webm video file)
+// -------------------------------------------------------------------------
+async function recordAndDownloadVideo() {
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getDisplayMedia) {
+        alert("Screen recording is supported directly in modern Chrome or Edge on desktop!");
+        return;
+    }
+
+    try {
+        const recordBtn = document.getElementById("recordVideoBtn");
+        if (recordBtn) {
+            recordBtn.textContent = "🔴 Recording in Progress...";
+            recordBtn.disabled = true;
+        }
+
+        // Ask user to pick tab (Select 'Current Tab' or 'This Tab')
+        const stream = await navigator.mediaDevices.getDisplayMedia({
+            video: { displaySurface: "browser" },
+            audio: false
+        });
+
+        // Initialize MediaRecorder
+        let mediaRecorder;
+        try {
+            mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm;codecs=vp9' });
+        } catch (e) {
+            mediaRecorder = new MediaRecorder(stream);
+        }
+
+        const chunks = [];
+        mediaRecorder.ondataavailable = function(e) {
+            if (e.data && e.data.size > 0) {
+                chunks.push(e.data);
+            }
+        };
+
+        mediaRecorder.onstop = function() {
+            // Build video file blob
+            const blob = new Blob(chunks, { type: 'video/webm' });
+            const videoUrl = URL.createObjectURL(blob);
+
+            // Auto-trigger video download directly to PC Downloads folder
+            const a = document.createElement("a");
+            a.style.display = "none";
+            a.href = videoUrl;
+            a.download = "CodeAlpha_PhishingAwareness_Demo.webm";
+            document.body.appendChild(a);
+            a.click();
+
+            setTimeout(() => {
+                document.body.removeChild(a);
+                URL.revokeObjectURL(videoUrl);
+            }, 500);
+
+            // Stop screen tracks
+            stream.getTracks().forEach(track => track.stop());
+
+            if (recordBtn) {
+                recordBtn.textContent = "🎥 Record & Download Demo Video (.webm)";
+                recordBtn.disabled = false;
+            }
+
+            alert("🎉 Video successfully saved! 'CodeAlpha_PhishingAwareness_Demo.webm' has been downloaded to your Downloads folder!");
+        };
+
+        // Start recording
+        mediaRecorder.start();
+
+        // Run the walkthrough demo
+        await startAutoDemo();
+
+        // Stop recorder when demo completes
+        if (mediaRecorder.state !== 'inactive') {
+            mediaRecorder.stop();
+        }
+    } catch (err) {
+        console.error("Recording error or user cancelled:", err);
+        const recordBtn = document.getElementById("recordVideoBtn");
+        if (recordBtn) {
+            recordBtn.textContent = "🎥 Record & Download Demo Video (.webm)";
+            recordBtn.disabled = false;
+        }
+    }
+}
+
 // Load first question when page starts
 showQuestion();

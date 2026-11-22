@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetSniffer | Network Monitor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <div class="brand">
+            <span class="logo">◈</span>
+            <div>
+                <h1>NetSniffer</h1>
+                <p>NETWORK MONITORING SYSTEM</p>
+            </div>
+        </div>
+        <div class="status">
+            <span class="dot"></span> SYSTEM READY
+        </div>
+    </header>
+
+    <main>
+        <section class="welcome">
+            <div>
+                <p class="eyebrow">CYBERSECURITY TOOL</p>
+                <h2>Network Traffic <span>Dashboard</span></h2>
+                <p class="subtitle">Monitor and analyze live network packets in real time.</p>
+            </div>
+            <div class="controls">
+                <button id="startBtn" class="start">▶ Start Capture</button>
+                <button id="stopBtn" class="stop">■ Stop Capture</button>
+                <button id="clearBtn" class="clear">Clear</button>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="stat-card">
+                <p>Total Packets</p>
+                <h2 id="totalPackets">0</h2>
+            </div>
+            <div class="stat-card">
+                <p>TCP Packets</p>
+                <h2 id="tcpPackets">0</h2>
+            </div>
+            <div class="stat-card">
+                <p>UDP Packets</p>
+                <h2 id="udpPackets">0</h2>
+            </div>
+            <div class="stat-card">
+                <p>ICMP Packets</p>
+                <h2 id="icmpPackets">0</h2>
+            </div>
+        </section>
+
+        <section class="table-section">
+            <div class="table-heading">
+                <div>
+                    <h2>Live Packet Capture</h2>
+                    <p>Captured network traffic details</p>
+                </div>
+                <span class="live-label">● LIVE</span>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>TIME</th>
+                            <th>SOURCE IP</th>
+                            <th>DESTINATION IP</th>
+                            <th>PROTOCOL</th>
+                            <th>SOURCE PORT</th>
+                            <th>DEST. PORT</th>
+                            <th>SIZE</th>
+                        </tr>
+                    </thead>
+                    <tbody id="packetTable">
+                        <tr>
+                            <td colspan="7" class="empty">No packets captured yet. Start capture to begin.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>NetSniffer | Built with Python, Scapy, Flask, HTML, CSS & JavaScript</footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
