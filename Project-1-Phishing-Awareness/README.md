@@ -54,3 +54,9 @@ CodeAlpha_PhishingAwareness/
 ## Internship
 - **Organization:** CodeAlpha
 - **Domain:** Cyber Security
+
+
+## Learning Outcomes
+- Recognizing common phishing techniques and social engineering tactics.
+- Identifying suspicious links, urgent language, impersonation, and other email red flags.
+- Building interactive cybersecurity awareness content with HTML, CSS, and JavaScript.
